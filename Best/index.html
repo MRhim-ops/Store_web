@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUXE - Premium Shopping Experience</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+  <div class="notification-container" id="notification-container"></div>
+  
+  <header>
+    <div class="logo">
+      <h1 class="title">LUXE</h1>
+    </div>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search products...">
+      <button id="search-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+      </button>
+    </div>
+    <div class="header-actions">
+      <div class="cart-icon" id="cart-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+        <span class="cart-count" id="cart-count">0</span>
+      </div>
+      <div class="user-icon">
+        <h1 id="account"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"></circle><path d="M20 21a8 8 0 1 0-16 0"></path></svg></h1>
+      </div>
+      <div class="menu-icon" id="menu-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+      </div>
+    </div>
+  </header>
+
+  <nav class="main-nav" id="main-nav">
+    <div class="nav-header">
+      <h2>Menu</h2>
+      <button class="close-nav" id="close-nav">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+    </div>
+    <ul>
+      <li><a class="a" href="#hero">Home</a></li>
+      <li><a class="a" href="#products">Products</a></li>
+      <li><a class="a" href="#categories">Categories</a></li>
+      <li><a class="a" href="#about">About</a></li>
+      <li><a class="a" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="close-cart" id="close-cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+    </div>
+    <div class="cart-items" id="cart-items">
+    </div>
+    <div class="cart-summary">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cart-total">$0.00</span>
+      </div>
+      <button class="checkout-btn" id="checkout-btn">Checkout</button>
+    </div>
+  </div>
+
+  <div class="product-modal" id="product-modal">
+    <div class="modal-content">
+      <button class="close-modal" id="close-modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+      </button>
+      <div class="modal-product" id="modal-product-content">
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Elevate Your Style</h1>
+      <p>Discover premium products curated just for you</p>
+      <a href="#products" class="cta-button">Shop Now</a>
+    </div>
+  </section>
+
+  <section id="featured-categories" class="featured-categories">
+    <h2 class="section-title">Shop by Category</h2>
+    <div class="categories-container">
+      <div class="category-card" data-category="electronics">
+        <div class="category-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg>
+        </div>
+        <h3>Electronics</h3>
+      </div>
+      <div class="category-card" data-category="jewelery">
+        <div class="category-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path></svg>
+        </div>
+        <h3>Jewelry</h3>
+      </div>
+      <div class="category-card" data-category="men's clothing">
+        <div class="category-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M8 7V3.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5V7"></path></svg>
+        </div>
+        <h3>Men's Clothing</h3>
+      </div>
+      <div class="category-card" data-category="women's clothing">
+        <div class="category-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M8 7V3.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5V7"></path></svg>
+        </div>
+        <h3>Women's Clothing</h3>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="products">
+    <div class="products-header">
+      <h2 class="section-title">Our Products</h2>
+      <div class="filter-container">
+        <select id="category-filter">
+          <option value="all">All Categories</option>
+          <option value="electronics">Electronics</option>
+          <option value="jewelery">Jewelry</option>
+          <option value="men's clothing">Men's Clothing</option>
+          <option value="women's clothing">Women's Clothing</option>
+        </select>
+        <select id="sort-filter">
+          <option value="default">Sort by: Featured</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="name-asc">Name: A to Z</option>
+          <option value="name-desc">Name: Z to A</option>
+        </select>
+      </div>
+    </div>
+    <div class="products-grid" id="products-grid">
+      <div class="loading-spinner" id="loading-spinner">
+        <div class="spinner"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="about-content">
+      <h2 class="section-title">About LUXE</h2>
+      <p>LUXE is a premium shopping destination offering carefully curated products that combine quality, style, and functionality. Our mission is to provide an exceptional shopping experience with products that enhance your lifestyle.</p>
+      <p>We believe in sustainable practices, ethical sourcing, and building lasting relationships with our customers. Every product in our collection is selected with care to ensure it meets our high standards.</p>
+    </div>
+  </section>
+
+  <section id="newsletter" class="newsletter">
+    <div class="newsletter-content">
+      <h2>Join Our Newsletter</h2>
+      <p>Subscribe to receive updates on new arrivals, special offers, and more.</p>
+      <form id="newsletter-form">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>LUXE</h3>
+        <p>Premium shopping experience for the discerning customer.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: info@luxe.com</p>
+        <p>Phone: +1 (555) 123-4567</p>
+        <p>Address: 123 Fashion Street, Style City</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+          </a>
+          <a href="#" class="social-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 LUXE. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

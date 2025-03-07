@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUXE - Account Information</title>
+  <link rel="stylesheet" href="accinfo.css">
+  <link rel="stylesheet" href="style.css">
+  <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Account Information</h1>
+      <p class="subtitle">Manage your personal details and preferences</p>
+      <a href="index.html"><i class="ri-arrow-go-back-line"> go back</i></a>
+    </header>
+
+    <div class="content-wrapper">
+      <aside class="sidebar">
+        <div class="profile-summary">
+          <div class="avatar">
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile Picture">
+          </div>
+          <h2 id="name"></h2>
+          <p id="email"></p>
+        </div>
+        <nav class="sidebar-nav">
+          <ul>
+            <li class="active"><a href="#profile">Profile Information</a></li>
+          </ul>
+          <div class="nav-footer">
+            <a id="leave" href="#logout" class="logout-btn">Sign Out</a>
+          </div>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <section class="content-section" id="profile">
+          <div class="section-header">
+            <h3>Profile Information</h3>
+            <button class="edit-btn">Edit Profile</button>
+          </div>
+          
+          <div class="profile-details">
+            <div class="profile-image-large">
+              <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile Picture">
+              <div class="image-overlay">
+                <span>Change Photo</span>
+              </div>
+            </div>
+            
+            <div class="info-group">
+              <div class="info-item">
+                <label>Full Name</label>
+                <p id="fulname"></p>
+              </div>
+              <div class="info-item">
+                <label>Email Address</label>
+                <p id="fullemail"></p>
+              </div>
+              <div class="info-item">
+                <label>Phone Number</label>
+                <p>+1 (555) 123-4567</p>
+              </div>
+              <div class="info-item">
+                <label>Address</label>
+                <p>123 Main Street, New York, NY 10001</p>
+              </div>
+              <div class="info-item full-width">
+                <label>Bio</label>
+                <p>Product designer and developer based in New York with over 10 years of experience in creating user-friendly interfaces and solutions.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="content-section" id="security">
+          <div class="section-header">
+            <h3>Security Settings</h3>
+          </div>
+          
+          <div class="security-settings">
+            <div class="setting-item">
+              <div class="setting-info">
+                <h4>Password</h4>
+                <p>Last changed 3 day ago</p>
+              </div>
+              <button class="secondary-btn">Change Password</button>
+            </div>
+            
+            <div class="setting-item">
+              <div class="setting-info">
+                <h4>Dark Theme</h4>
+                <p>Change Your theme to dark</p>
+              </div>
+              <label class="toggle">
+                <input id="theme-toggle" type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+            
+            <div class="setting-item">
+              <div class="setting-info">
+                <h4>Login Sessions</h4>
+                <p>You're currently logged in on 1 devices</p>
+              </div>
+              <button class="secondary-btn">Manage Sessions</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="accinfo.js"></script>
+</body>
+</html>
